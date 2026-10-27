@@ -1,0 +1,2 @@
+# Scheduler Laravel (mepro:check-machines tiap menit, mepro:prune-counts tiap 02:00)
+* * * * * cd /var/www/mepro && php artisan schedule:run >> /dev/null 2>&1

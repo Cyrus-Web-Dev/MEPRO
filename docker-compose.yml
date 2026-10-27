@@ -1,0 +1,26 @@
+# Infrastruktur pengembangan: PostgreSQL (+TimescaleDB siap pakai) dan broker MQTT Mosquitto
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg16
+    environment:
+      POSTGRES_DB: mepro
+      POSTGRES_USER: mepro
+      POSTGRES_PASSWORD: secret
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./docker/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqttdata:/mosquitto/data
+
+volumes:
+  pgdata:
+  mqttdata:

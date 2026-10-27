@@ -1,0 +1,58 @@
+:root {
+  --bg: #f4f6f8; --card: #fff; --text: #1c2733; --muted: #6b7a89; --line: #dde3ea;
+  --primary: #1f6feb; --ok: #1a9f4b; --warn: #e08a00; --bad: #d93a3a; --idle: #7a8794;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #11161c; --card: #1a222b; --text: #e6edf3; --muted: #8b98a6; --line: #2b3641; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--primary); text-decoration: none; }
+header.top { display: flex; align-items: center; gap: 20px; padding: 10px 20px; background: var(--card); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+header.top .brand { font-weight: 800; letter-spacing: .5px; }
+header.top nav { display: flex; gap: 14px; flex: 1; flex-wrap: wrap; }
+header.top nav a.router-link-exact-active { font-weight: 700; border-bottom: 2px solid var(--primary); }
+main { padding: 20px; max-width: 1300px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 16px; }
+h2 { font-size: 16px; margin: 0 0 10px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.spread { justify-content: space-between; }
+.muted { color: var(--muted); font-size: 13px; }
+.big { font-size: 34px; font-weight: 800; line-height: 1.1; }
+label { display: block; font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+input, select, textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--text); font-size: 14px; }
+input[type=checkbox] { width: auto; }
+button { padding: 8px 14px; border: 0; border-radius: 6px; background: var(--primary); color: #fff; font-size: 14px; cursor: pointer; }
+button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+button.danger { background: var(--bad); }
+button.ok { background: var(--ok); }
+button.warn { background: var(--warn); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.xl { padding: 16px 22px; font-size: 18px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+.table-wrap { overflow-x: auto; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; }
+.badge.running { background: var(--ok); } .badge.idle { background: var(--idle); }
+.badge.downtime { background: var(--bad); } .badge.offline { background: #444; }
+.badge.planned { background: var(--idle); } .badge.paused { background: var(--warn); }
+.badge.completed { background: var(--primary); } .badge.cancelled { background: #444; }
+.bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar > div { height: 100%; background: var(--primary); }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; margin-top: 10px; }
+.kpis b { display: block; font-size: 16px; }
+.alert { padding: 10px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 14px; }
+.alert.err { background: #d93a3a22; color: var(--bad); border: 1px solid var(--bad); }
+.alert.ok { background: #1a9f4b22; color: var(--ok); border: 1px solid var(--ok); }
+.alert.warn { background: #e08a0022; color: var(--warn); border: 1px solid var(--warn); }
+.login { max-width: 380px; margin: 12vh auto; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; background: var(--idle); }
+.dot.on { background: var(--ok); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tabs button { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.tabs button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.hmi-grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+@media (max-width: 800px) { .hmi-grid { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } }

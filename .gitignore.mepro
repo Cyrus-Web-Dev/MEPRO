@@ -1,0 +1,3 @@
+firmware/esp32/include/config.h
+firmware/esp32/.pio/
+tools/.sim_seq.json
