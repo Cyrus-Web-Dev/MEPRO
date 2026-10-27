@@ -1,4 +1,16 @@
 # MEPRO - Manufacturing Execution System (paket Fase 1-6)
+> **⚠️ DISCLAIMER — KERANGKA MENTAH (RAW / MVP)**
+>
+> Proyek **MEPRO** ini adalah **kerangka (skeleton) versi awal**, **bukan** sistem yang siap produksi atau siap dipakai langsung di pabrik / perusahaan / industri.
+>
+> - Harus dijalankan mengikuti petunjuk di README.
+> - Sebaiknya ditinjau dan diuji oleh pihak yang memahami lingkungan industri (IT pabrik, maintenance, supervisor, security).
+> - Kesesuaian dengan kebutuhan operasional **bergantung pada evaluasi dan penyesuaian klien**.
+> - Keamanan, hardening, dan kelengkapan fitur **belum** diklaim memadai untuk lingkungan produksi nyata.
+>
+> Saya sebagai developer menyediakan **fondasi / kerangka dasar** end-to-end (MES, OEE, MQTT, HMI, dll.).  
+> Apakah sudah sesuai kebutuhan, aman, dan layak dilanjutkan — **keputusan dan tanggung jawab evaluasinya ada pada pengguna / klien**.
+
 
 Paket ini adalah **overlay**: file-file yang disalin ke atas proyek Laravel baru. Stack: Laravel 11/12 + PostgreSQL + Reverb + MQTT (php-mqtt/client) + Vue 3 + ESP32.
 
